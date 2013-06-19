@@ -7,7 +7,11 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
+end
+
+group :test do
   gem 'fuubar'
+  gem 'shoulda-matchers'
 end
 
 group :assets do
