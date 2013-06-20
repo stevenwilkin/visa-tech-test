@@ -18,6 +18,8 @@ group :test do
   gem 'shoulda-matchers'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'faker'
+  gem 'factory_girl_rails'
 end
 
 group :assets do
