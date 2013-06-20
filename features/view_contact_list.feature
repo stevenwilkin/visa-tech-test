@@ -7,5 +7,5 @@ Feature: View the contacts list
   	Given I have a contact Bob Smith
 	And I have a contact Tom Jones
 	When I view the list
-	Then I can see Bob Smith
-	And I can see Tom Jones
+	Then I can see contact Bob Smith
+	And I can see contact Tom Jones

@@ -11,4 +11,4 @@
       %th Name
     - for contact in @contacts do
       %tr
-        %td #{contact.first_name} #{contact.last_name}
+        %td= link_to "#{contact.first_name} #{contact.last_name}", contact
