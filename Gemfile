@@ -4,6 +4,7 @@ ruby '1.9.3'
 
 gem 'rails', '3.2.13'
 gem 'pg'
+gem 'unicorn'
 
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
