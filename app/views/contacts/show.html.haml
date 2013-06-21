@@ -2,8 +2,27 @@
 
 %table
   %tr
-    %td Email
-    %td= @contact.email
+    %td
+      %b Email
+    %td= link_to(@contact.email, "mailto:#{@contact.email}")
   %tr
-    %td Mobile
+    %td
+      %b Mobile
     %td= @contact.mobile
+  %tr
+    %td
+      %b Landline
+    %td= @contact.landline
+  %tr
+    %td
+      %b Twitter
+    %td= link_to(@contact.twitter, "https://twitter.com/#{@contact.twitter}") if @contact.twitter
+  %tr
+    %td
+      %b Photo
+    %td= image_tag(@contact.photo) if @contact.photo
+  %tr
+    %td
+    %td
+      = link_to "Edit", edit_contact_path(@contact), class: "btn btn-primary"
+      = link_to "Delete", @contact, method: :delete, confirm: "Really delete?", class: "btn btn-danger"
