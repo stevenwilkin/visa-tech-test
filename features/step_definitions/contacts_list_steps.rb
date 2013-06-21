@@ -35,9 +35,18 @@ When /^I change the email to (\S+)$/ do |email|
   click_button "Save"
 end
 
+When /^I delete contact (.+)$/ do |full_name|
+  visit '/'
+  click_link 'Delete'
+end
+
 
 Then /^I can see contact (.+)$/ do |full_name|
   page.body.should match full_name
+end
+
+Then /^I cannot see contact (.+)$/ do |full_name|
+  page.body.should_not match full_name
 end
 
 Then /^I can see email (.+)$/ do |email|

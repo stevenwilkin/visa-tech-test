@@ -34,4 +34,14 @@ class ContactsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @contact = Contact.find(params[:id])
+    if @contact.destroy
+      flash[:notice] = "The contact was deleted"
+    else
+      flash[:error] = "The contact couldn't be deleted"
+    end
+    redirect_to root_path
+  end
 end

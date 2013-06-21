@@ -12,3 +12,4 @@
         %td= link_to "#{contact.first_name} #{contact.last_name}", contact
         %td
           = link_to "Edit", edit_contact_path(contact), class: "btn btn-primary"
+          = link_to "Delete", contact, method: :delete, confirm: "Really delete?", class: "btn btn-danger"
