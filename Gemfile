@@ -5,6 +5,7 @@ gem 'sqlite3'
 
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap_form'
 gem 'less-rails'
 gem 'therubyracer'
 gem 'jquery-rails'
