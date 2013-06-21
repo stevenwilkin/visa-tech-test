@@ -28,6 +28,8 @@
           .container.nav-collapse
             %ul.nav
               %li= link_to "Add Contact", new_contact_path
+            %form.form-search
+              %input{type: "text", placeholder: "Search", id: "search", class: "input-medium search-query"}
 
     .container
 

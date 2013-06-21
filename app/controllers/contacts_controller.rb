@@ -44,4 +44,11 @@ class ContactsController < ApplicationController
     end
     redirect_to root_path
   end
+
+  def search
+    q = "%#{params[:q]}%"
+    contacts = Contact.where(
+      'first_name LIKE ? OR last_name LIKE ?', q, q)
+    render json: contacts
+  end
 end

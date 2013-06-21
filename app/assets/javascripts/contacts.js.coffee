@@ -1,3 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  $('#search').typeahead
+    minLength: 2,
+    source: (query, process) ->
+      $.getJSON("/contacts/search?q=#{query}", (json) ->
+        self.names = []
+        self.namesIds = {}
+        json.forEach (item) ->
+          self.names.push item.name
+          self.namesIds[item.name] = item.id
+        process self.names
+      )
+    updater: (item) ->
+      window.location.replace "/contacts/#{self.namesIds[item]}"

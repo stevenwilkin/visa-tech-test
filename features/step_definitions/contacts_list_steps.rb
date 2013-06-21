@@ -40,6 +40,14 @@ When /^I delete contact (.+)$/ do |full_name|
   click_link 'Delete'
 end
 
+When /^I enter (\w+) into the search box$/ do |query|
+  visit '/'
+  fill_in 'search', with: query
+end
+
+When /^I click on the first search result$/ do
+  find('.form-search li:first').click
+end
 
 Then /^I can see contact (.+)$/ do |full_name|
   page.body.should match full_name
