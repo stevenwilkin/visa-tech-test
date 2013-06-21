@@ -20,4 +20,18 @@ class ContactsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @contact = Contact.find(params[:id])
+  end
+
+  def update
+    @contact = Contact.find(params[:id])
+    if @contact.update_attributes(params[:contact])
+      redirect_to root_path, notice: "The contact was updated"
+    else
+      flash[:error] = "The contact couldn't be updated"
+      render :edit
+    end
+  end
 end

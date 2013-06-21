@@ -10,3 +10,5 @@
     - for contact in @contacts do
       %tr
         %td= link_to "#{contact.first_name} #{contact.last_name}", contact
+        %td
+          = link_to "Edit", edit_contact_path(contact), class: "btn btn-primary"

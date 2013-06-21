@@ -28,6 +28,13 @@ When /^I save the contact$/ do
   click_button 'Save'
 end
 
+When /^I change the email to (\S+)$/ do |email|
+  visit '/'
+  click_link 'Edit'
+  fill_in 'Email', with: email
+  click_button "Save"
+end
+
 
 Then /^I can see contact (.+)$/ do |full_name|
   page.body.should match full_name
