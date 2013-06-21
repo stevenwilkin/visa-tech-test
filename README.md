@@ -53,3 +53,32 @@ Build a ruby on rails application that implements the below user stories:
 3. Your choice of view template, asset management and javascript
 4. Your choice of validations
 5. Your use of ruby in general
+
+
+## Running the application
+
+Download the code, install the dependencies and run:
+
+	git clone git@github.com:stevenwilkin/visa-tech-test.git
+	cd visa-tech-test
+	bundle install
+	bundle exec rake db:create db:schema:load
+	bundle exec rails server
+
+
+Browse to [http://0.0.0.0:3000](http://0.0.0.0:3000)
+
+
+## Running the tests
+
+Create the test database:
+
+	RAILS_ENV=test bundle exec rake db:create db:schema:load
+
+Run the unit tests:
+
+	bundle exec rake spec
+
+Run the acceptance tests:
+
+	bundle exec rake cucumber
