@@ -7,8 +7,6 @@
 - else
 
   %table{ class: "table table-striped" }
-    %tr
-      %th Name
     - for contact in @contacts do
       %tr
         %td= link_to "#{contact.first_name} #{contact.last_name}", contact
